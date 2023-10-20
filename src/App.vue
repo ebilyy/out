@@ -1,26 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div >
+    <LogIn></LogIn>
+  </div>
+  <!-- <v-app>
+    <v-navigation-drawer v-model="drawer" absolute temporary width="335" class="nav-panel pa-2">
+      <v-list-item>
+        <v-list-item-avatar>
+         some text
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title class="title">Vuetify</v-list-item-title>
+          <v-list-item-subtitle>admin</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+    </v-navigation-drawer>
+    <v-app-bar :clipped-left="clipped" fixed app >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    </v-app-bar>
+  </v-app> -->
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LogIn from './components/LogIn.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      drawer: false,
+      clipped: false,
+      items: [
+        {
+          name: 'Dashboard',
+          icon: 'mdi-view-dashboard',
+          path: '/dashboard'
+        }
+      ],
+      // token: localStorage.getItem('token')
+    }
+  },
   components: {
-    HelloWorld
+    LogIn
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+  font-family: Roboto, sans-serif;
 }
 </style>
